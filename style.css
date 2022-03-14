@@ -1,0 +1,23 @@
+h1 {
+  color: red;
+}
+
+.as {
+  border: 2px solid black;
+  height: 320px;
+}
+
+.btn {
+  width: 100px;
+  padding: 8px;
+}
+
+input::placeholder {
+  color: blue;
+}
+
+.form,
+h1 {
+  display: grid;
+  place-items: center;
+}
