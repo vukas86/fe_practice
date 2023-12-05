@@ -94,3 +94,222 @@ const last8Dgtls = fullNum.slice(-8);
 const maskedNum = last8Dgtls.padStart(fullNum.length, "*");
 
 console.log(maskedNum);
+
+/////////////////////////////////////////////////
+// Array Destructuring
+
+// const animals = ["Pas", "Macka", "Konj"];
+// const dogVar = animals[0];
+// const catVar = animals[1];
+// const horseVar = animals[2];
+
+// const [firstElement, secondElement, thirdElement] = animals;
+
+// const [dog, cate, horse] = animals;
+// console.log(cate);
+
+// const fruits = ["Banana", "Jabuka", "Narandza"];
+
+// const [, apple] = fruits;
+// const [, , orange] = fruits;
+// console.log(apple);
+
+// class Alien {
+//   constructor(name, phrase) {
+//     this.name = name;
+//     this.phrase = phrase;
+//     this.spieces = "alien";
+//   }
+//   fly = () => {
+//     console.lo("zzzzzzzzzzzzz");
+//   };
+// }
+
+///////////////////////////////
+// SORT an ARRAY
+// const arr = [44, 81, 23, 2, 64, 25, 100];
+
+// const sortArr = arr.sort((a, b) => {
+//   return b - a;
+// });
+// console.log(sortArr);
+
+///////////////////////
+// Generator Function
+
+// function* g1() {
+//   console.log("Hello");
+//   yield "Yield 1 ran";
+//   console.log("Wolr");
+//   yield "yeidel 2 ran";
+//   return "Returned...";
+// }
+
+// var g = g1();
+// // console.log(g.next().value);
+// // console.log(g.next().value);
+// // console.log(g.next().value);
+
+// for (let val of g) {
+//   console.log(val);
+// }
+
+// function* generatorExample() {
+//   let a = 0;
+
+//   yield 8;
+//   yield 9;
+//   yield 10;
+
+//   return 11;
+// }
+
+// const generator = generatorExample();
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// USAGE OF VARIABLES INSIDE GENERATORS
+
+// I want: 1, 4, 9, 16, 25, 36...
+// function* createSquaredNumGen(max) {
+//   let n = 0;
+
+//   while (n < max) {
+//     n++;
+//     yield n * n;
+//   }
+// }
+
+// for (const n of createSquaredNumGen(10)) {
+//   console.log(n);
+// }
+
+// Retrive random unique values from an array
+// function* createUniqueRanGen(array) {
+//   const available = array;
+
+//   while (available.length !== 0) {
+//     const randomIn = Math.floor(Math.random() * available.length);
+//     const value = available[randomIn];
+
+//     //remove the used value from the list of available values
+//     available.splice(randomIn, 1);
+
+//     yield value;
+//   }
+// }
+
+// const names = ["Pera", "Mina", "Laza", "Rakel"];
+// const uniqueNames = createUniqueRanGen(names);
+
+// for (const name of uniqueNames) {
+//   console.log(name);
+// }
+/////////////////////////////////
+// MEMOIZATION
+
+// const memoize = (fn) => {
+//   const cache = {};
+//   return function (...args) {
+//     if (cache[args]) {
+//       return cache[args];
+//     }
+//     const result = fn(...args);
+//     cache[args] = result;
+//     return result;
+//   };
+// };
+
+// const ridicSlowFun = (num) => {
+//   for (let i = 0; i <= num; i++) {
+//     if (i == num) {
+//       return i;
+//     }
+//   }
+// };
+
+// const fastFunction = memoize(ridicSlowFun);
+// fastFunction(200000000);
+
+// console.time();
+// // console.log(ridicSlowFun(2000000000));
+// console.log(fastFunction(20000000));
+// console.timeEnd();
+
+// console.time();
+// // console.log(ridicSlowFun(2000000000));
+// console.log(fastFunction(20000000));
+// console.timeEnd();
+
+////////////////////////////////////
+// OBJECTS
+// let car = {
+//   name: "volvo",
+//   year: 1989,
+//   color: "red",
+// };
+
+// console.log(car);
+// console.log("/////////////////////////////////////");
+// car.type = "cabrio";
+
+// Object.defineProperty(car, "type", {
+//   writable: true,
+//   enumerable: true,
+//   configurable: false,
+//   value: "gas",
+// });
+
+// let NewCar = {
+//   model: "Yugo",
+//   color: "green",
+// };
+
+// let ElectricCar = Object.create(NewCar);
+
+// console.log(JSON.stringify(car));
+
+// function Person(name, age) {
+//   (this.name = name), (this.age = age);
+// }
+
+// let person1 = new Person("Pera", 35);
+// let person2 = new Person("Zmka", 44);
+// console.log(person1, person2);
+
+////////////////////////////////////
+// Array Methods
+// Join
+// const arr1 = ["cat", "mouse", "tiger"];
+// console.log(arr1.join("-"));
+// // Slice
+// console.log(arr1.slice(0, 1));
+
+const objectLiterals = {};
+
+const objectConstructor = new Object();
+
+const gimli = {
+  name: "Gimli",
+  race: "Dwarf",
+  weapon: "axe",
+  greet: function () {
+    return `Hi, my name is ${this.name}`;
+  },
+};
+
+gimli.age = 139;
+
+gimli.fight = function () {
+  return `Gimli attacks with an ${this.weapon}`;
+};
+
+gimli.weapon = "battle axe";
+
+delete gimli.weapon;
+
+console.log(gimli);
+console.log(Object.keys(gimli));
