@@ -288,28 +288,68 @@ console.log(maskedNum);
 // // Slice
 // console.log(arr1.slice(0, 1));
 
-const objectLiterals = {};
+// const objectLiterals = {};
 
-const objectConstructor = new Object();
+// const objectConstructor = new Object();
 
-const gimli = {
-  name: "Gimli",
-  race: "Dwarf",
-  weapon: "axe",
-  greet: function () {
-    return `Hi, my name is ${this.name}`;
-  },
-};
+// const gimli = {
+//   name: "Gimli",
+//   race: "Dwarf",
+//   weapon: "axe",
+//   greet: function () {
+//     return `Hi, my name is ${this.name}`;
+//   },
+// };
 
-gimli.age = 139;
+// gimli.age = 139;
 
-gimli.fight = function () {
-  return `Gimli attacks with an ${this.weapon}`;
-};
+// gimli.fight = function () {
+//   return `Gimli attacks with an ${this.weapon}`;
+// };
 
-gimli.weapon = "battle axe";
+// gimli.weapon = "battle axe";
 
-delete gimli.weapon;
+// delete gimli.weapon;
 
-console.log(gimli);
-console.log(Object.keys(gimli));
+// console.log(gimli);
+// console.log(Object.keys(gimli));
+
+//////////////////////
+// Object to string query
+// let merlin = {
+//   job: "wizard",
+//   tool: "Wand",
+//   age: 132,
+//   signatureSpell: "Dancinn Panda",
+// };
+
+// let qustr = new URLSearchParams(merlin).toString();
+
+// console.log(qustr);
+
+/////////////////////////////
+
+// Remove Duplicates from an Array
+
+// let zima = ["snesko belic", "sanke", "sanke", "deda mraz", "sneg", "sneg"];
+
+// let newZima = Array.from(new Set(zima));
+// console.log(newZima);
+
+///////////////////
+
+// Generate Radnom IDs
+
+// let newId = crypto.randomUUID().slice(-12);
+// console.log(newId);
+
+////////////////////
+// Object property shorthands
+
+// let ime = "Pera Mrkic";
+// let zanimaje = "Predsednik";
+// let godina = 44;
+
+// let noviClan = { ime, zanimaje, godina };
+
+// console.log(noviClan);
